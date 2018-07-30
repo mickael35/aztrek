@@ -9,13 +9,13 @@ get_header("Accueil");
 
 <section class="owl-carousel" id="main-slider">
     <article class="item">
-        <img src="./uploads/photo_guatemala.jpg" alt="">
+        <img src="./uploads/guatemala.jpg" alt="">
     </article>
     <article class="item">
-        <img src="./uploads/photo_honduras.jpg" alt="">
+        <img src="./uploads/honduras.jpg" alt="">
     </article>
     <article class="item">
-        <img src="./uploads/photo_salvador.jpg" alt="">
+        <img src="./uploads/salvador.jpg" alt="">
     </article>
 </section>
 

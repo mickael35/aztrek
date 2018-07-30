@@ -6,7 +6,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Pays</label>
         <div class="col-sm-10">
-            <input type="text" name="libelle" class="form-control" placeholder="Libellé">
+            <input type="text" name="pays" class="form-control" placeholder="pays">
         </div>
     </div>
     <button type="submit" class="btn btn-success float-right">

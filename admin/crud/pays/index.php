@@ -15,30 +15,34 @@ require_once '../../layout/header.php';
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
-            <th>Libellé</th>
-            <th>Actions</th>
+            <th>nom</th>
+            <th>description</th>
+            <th>photo</th>
+            <<th>actions</th>
+
         </tr>
     </thead>
     <tbody>
         <?php foreach ($list_pays as $pays) : ?>
-        <tr>
-            <td><?php echo $pays["nom"]; ?></td>
-            <td>
-                <img src="<?php echo SITE_URL . "uploads/" . $pays["photo"]; ?>" class="img-thumbail">
-            </td>
-            
-            <td class="col-actions">
-                <form action="delete_query.php" method="post" class="form-delete">
-                    <input type="hidden" name="id" value="<?php echo $categorie["id"]; ?>">
-                    <button type="submit" class="btn btn-danger" title="Supprimer">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </form>
-                <a href="update_form.php?id=<?php echo $categorie["id"]; ?>" class="btn btn-warning">
-                    <i class="fa fa-edit"></i>
-                </a>
-            </td>
-        </tr>
+            <tr>
+                <td><?php echo $pays["nom"]; ?></td>
+
+                <td><?php echo $pays["description"]; ?></td>
+
+                <td><img src="<?php echo SITE_URL . "uploads/" . $pays["photo"]; ?>" class="img-thumbnail"></td>
+
+                <td class="col-actions">
+                    <form action="delete_query.php" method="post" class="form-delete">
+                        <input type="hidden" name="id" value="<?php echo $categorie["id"]; ?>">
+                        <button type="submit" class="btn btn-danger" title="Supprimer">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form>
+                    <a href="update_form.php?id=<?php echo $pays["id"]; ?>" class="btn btn-warning">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>

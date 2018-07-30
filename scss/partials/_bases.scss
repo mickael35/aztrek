@@ -1,0 +1,277 @@
+
+/* **********************************
+            BASE
+********************************** */
+
+html {
+    font-family: $font-default;
+    font-size: $font-size-base;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $marge;
+    
+}
+
+h1,
+h2,
+h3 {
+    font-family: $font-title;
+    font-weight: normal;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $link-color;
+        transition: 0.3s;
+    }
+    &:hover,
+    &:focus {
+        color: yellow($link-color, 20%);
+    }
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* **********************************
+            HEADER
+********************************** */
+.header-nav {
+    text-align: center;
+}
+.page-header {
+    background-color: $brown; 
+    min-height: 50vh; 
+}
+
+.page-header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+.baseline{
+    font-style: italic;
+}
+.burger {
+    font-size: 0;
+    position: absolute;
+    top: $marge;
+    left: $marge;
+    .fa {
+        font-size: 3rem;
+        color: #fff;
+    }
+}
+
+.main-nav {
+    display: none;
+}
+
+
+.site-title {
+    font-size: 0;
+}
+
+.search-form {
+    display: flex;
+    margin-top: 30px;
+    background-color: rgba(#fff, 0.5);
+    input[type="text"] {
+        border: 0;
+        background: none;
+        color: $blue;
+        padding: 1rem 1.5rem;
+        transition: background 0.3s;
+        &:focus {
+            background: rgba($brown, 0.5);
+            outline-color: $yellow;
+        }
+        &::placeholder {
+            color: $blue;
+        }
+    }
+    button {
+        border: 0;
+        background: none;
+        font-size: 0;
+        color: $blue;
+        cursor: pointer;
+        padding: 0 1rem;
+        .fa {
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        &:hover .fa {
+            transform: translateX(-4px);
+        }
+    }
+}
+
+.title_partage{
+    margin: 1em 1em 7em;
+}
+.title_destinations{
+    margin: 1em 1em 1em;
+}
+
+#main-slider img {
+    height: 250px;
+}
+
+
+/* **********************************
+            MAIN
+********************************** */
+
+// PARTIE SUPERIEURE
+
+main {
+    background-color: rgba(249, 177, 60, 0.2);
+    padding-bottom: 3em;
+}
+
+.page-home h1 {
+    font-size: 0;
+}
+.partage p{
+    color:#fff;
+}
+.partage {
+    background-color: $yellow;
+    margin-top: 2em;
+    padding: 1em;
+    text-align: center;
+}
+
+.owl-carousel {
+    background-color: $blue;
+    img {
+        width: 100%;
+    }
+    .owl-dots {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        button {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+}
+
+// PARTIE INFERIEURE
+.sejour {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    .sejour-home-visuel {
+        flex-basis: 30%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+    }
+    .sejour-home-pres {
+        flex-basis: 60%;
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .sejour-home-ctc {
+            align-self: flex-end;
+        }
+    }
+}
+
+/* **********************************
+            FOOTER
+********************************** */
+
+footer {
+    background-color: $marine;
+    color: #fff;
+    padding: 30px;
+    .footer-line1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .footer-social-link {
+            display: flex;
+            justify-content: space-between;
+            a {
+                padding: 0px;
+            }
+        }
+    }
+    .footer-line2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 700px;
+        margin: 3em auto 0;
+        padding: 10px;
+        border-top: 2px solid $brown;
+        p {
+            padding: 0 20px;
+        }
+    }
+}
+
+
+.social-nav {
+    margin: 30px 0;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+            margin: 15px;
+            a {
+                color: #fff;
+                font-size: 0;
+                transition: 0.3s;
+                &:hover {
+                    color: lighten($blue, 20%);
+                }
+                .fab {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.page-header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 50vh;
+    color: #fff;
+}
+
+.burger {
+    display: none;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.baseline{
+    margin: 50px 218px 0px 218px;
+}
+.main-nav {
+    display: block;
+    background-color: $brown;
+    ul {
+        display: flex;
+    }
+    a {
+        display: block;
+        color: #fff;
+        padding: 1rem;
+        margin: 0 1rem;
+        &:hover,
+        &:focus {
+            color: lighten($color: $blue, $amount: 20%);
+        }
+    }
+}
+
+.search-form {
+    margin-top: auto;
+}
+
+.owl-carousel {
+
+    .owl-nav button {
+        top: calc(50% - 1.5rem);
+    }
+}
+
+.main-content{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    .aside{
+        flex-basis: 40%;
+    }
+    .destinations{
+        flex-basis: 56%;
+    }
+}

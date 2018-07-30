@@ -16,12 +16,14 @@
             </li>
           </ul>
         </nav>
-        <h2>Un nouveau monde à chaques pas</h2>
+        <h2 class="baseline">Un nouveau monde à chaques pas</h2>
+
 
         <form class="search-form" action="#" method="get">
           <input type="text" name="keywords" value="" placeholder="Rechercher">
           <button type="submit" name="submit-btn">
             <i class="fa fa-search" aria-hidden="true"></i>Valider</button>
         </form>
+
 
       </div>

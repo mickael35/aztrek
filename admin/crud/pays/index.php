@@ -1,12 +1,12 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_categories = getAllEntities("categorie");
+$list_pays = getAllEntities("pays");
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des catégories</h1>
+<h1>Pays</h1>
 
 <a href="insert_form.php" class="btn btn-primary">Ajouter</a>
 
@@ -20,9 +20,13 @@ require_once '../../layout/header.php';
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($list_categories as $categorie) : ?>
+        <?php foreach ($list_pays as $pays) : ?>
         <tr>
-            <td><?php echo $categorie["libelle"]; ?></td>
+            <td><?php echo $pays["nom"]; ?></td>
+            <td>
+                <img src="<?php echo SITE_URL . "uploads/" . $pays["photo"]; ?>" class="img-thumbail">
+            </td>
+            
             <td class="col-actions">
                 <form action="delete_query.php" method="post" class="form-delete">
                     <input type="hidden" name="id" value="<?php echo $categorie["id"]; ?>">

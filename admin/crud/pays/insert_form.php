@@ -1,10 +1,10 @@
 <?php require_once '../../layout/header.php'; ?>
 
-<h1>Ajouter une catégorie</h1>
+<h1>Ajouter un Pays</h1>
 
-<form action="insert_query.php" method="post">
+<form action="insert_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Libellé</label>
+        <label class="col-sm-2 col-form-label">Pays</label>
         <div class="col-sm-10">
             <input type="text" name="libelle" class="form-control" placeholder="Libellé">
         </div>

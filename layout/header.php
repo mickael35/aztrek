@@ -10,7 +10,7 @@ $utilisateur = current_user();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AZTREK</title>
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -34,10 +34,8 @@ $utilisateur = current_user();
             <img src="images/logo.png" alt="Logo">
           </a>
         </div>
-        <h2 class="site-title">Eclipse</h2>
+        <h2 class="site-title">AZTREK</h2>
       </div>
-
-      
         <?php require_once 'layout/nav.php'; ?>
     </div>
   </header>

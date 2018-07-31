@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_sejours = getAllEntities("sejour");
+$list_sejours = getAllSejours();
 
 require_once '../../layout/header.php';
 ?>
@@ -15,26 +15,25 @@ require_once '../../layout/header.php';
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
-            <th>nb_de_jour</th>
-            <th>difficulte</th>
-            <th>titre</th>
-            <th>description</th>
-            <th>description_longue</th>
-            <th>photo</th>
+            <th>Pays</th>
+            <th>Nombre de jours</th>
+            <th>Difficultés</th>
+            <th>Titre</th>
+            <th>Photo</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($list_sejours as $sejour) : ?>
         <tr>
-            <td><?php echo $sejour["nb_de_jour"]; ?></td>
+            <td><?php echo $sejour["pays"]; ?></td>
+            <td><?php echo $sejour["duree"]; ?></td>
             <td><?php echo $sejour["difficulte"]; ?></td>
             <td><?php echo $sejour["titre"]; ?></td>
-            <td><?php echo $sejour["description"]; ?></td>
-            <td><?php echo $sejour["description_longue"]; ?></td>
            
             
             <td>
-                <img src="<?php echo SITE_URL . "/uploads/" . $sejour["photo"]; ?>" class="img-thumbnail">
+                <img src="<?php echo SITE_URL . "/uploads/" . $sejour["image"]; ?>" class="img-thumbnail">
             </td>
             
             <td class="col-actions">

@@ -22,6 +22,36 @@ $utilisateur = current_user();
 
 <body class="page-home">
   <header class="page-header">
+      <ul class="inline-list">
+                            <?php if (empty($utilisateur)) : ?>
+                                <li>
+                                    <a href="admin/register.php">
+                                        <i class="fa fa-user-plus"></i>
+                                        Créer un compte
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="admin/login.php">
+                                        <i class="fa fa-sign-in"></i>
+                                        Se connecter
+                                    </a>
+                                </li>
+                            <?php else: ?>
+                                <?php if ($utilisateur["admin"] == 1) : ?>
+                                    <li>
+                                        <a href="admin/">
+                                            <i class="fa fa-cogs"></i>
+                                            Administration
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <li>
+                                    <a href="admin/logout.php">
+                                        <i class="fa fa-sign-out"></i>
+                                        Déconnexion
+                                    </a>
+                                </li>
+                            <?php endif; ?>
     <div class="page-header-inner container">
 
       <a class="burger" href="#sidr-main">

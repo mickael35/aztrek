@@ -1,6 +1,6 @@
 <?php
 
-function insertPays(string $libelle): int {
+function insertPays(string $nom, string $description, string $photo): int {
     /* @var $connexion PDO */
     global $connexion;
     

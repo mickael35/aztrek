@@ -18,7 +18,7 @@ require_once '../../layout/header.php';
             <th>nom</th>
             <th>description</th>
             <th>photo</th>
-            <<th>actions</th>
+            <th>actions</th>
 
         </tr>
     </thead>
@@ -33,7 +33,7 @@ require_once '../../layout/header.php';
 
                 <td class="col-actions">
                     <form action="delete_query.php" method="post" class="form-delete">
-                        <input type="hidden" name="id" value="<?php echo $categorie["id"]; ?>">
+                        <input type="hidden" name="id" value="<?php echo $pays["id"]; ?>">
                         <button type="submit" class="btn btn-danger" title="Supprimer">
                             <i class="fa fa-trash"></i>
                         </button>

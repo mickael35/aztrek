@@ -2,8 +2,12 @@
 require_once '../../security.php';
 require_once '../../../model/database.php';
 
-$libelle = $_POST["pays"];
+$nom = $_POST["nom"];
+$image = $_FILES["image"]["name"];
+$tmp = $_FILES["image"]["tmp_name"];
+$description = $_POST["description"];
+move_uploaded_file($tmp, "../../../uploads/" . $image);
 
-insertCategorie($pays);
+insertPays($pays, $nom, $image, $description);
 
 header("Location: index.php");

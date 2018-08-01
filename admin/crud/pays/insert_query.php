@@ -3,11 +3,14 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $nom = $_POST["nom"];
-$image = $_FILES["image"]["name"];
-$tmp = $_FILES["image"]["tmp_name"];
 $description = $_POST["description"];
-move_uploaded_file($tmp, "../../../uploads/" . $image);
 
-insertPays($pays, $nom, $image, $description);
+// Upload de l'image
+$photo = $_FILES["image"]["name"];
+$tmp = $_FILES["image"]["tmp_name"];
+
+move_uploaded_file($tmp, "../../../uploads/" . $photo);
+
+insertPays($nom, $description, $photo);
 
 header("Location: index.php");

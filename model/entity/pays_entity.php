@@ -4,10 +4,12 @@ function insertPays(string $nom, string $description, string $photo): int {
     /* @var $connexion PDO */
     global $connexion;
     
-    $query = "INSERT INTO categorie (libelle) VALUES (:libelle)";
+    $query = "INSERT INTO pays (nom, description, photo) VALUES (:nom, :description, :photo)";
     
     $stmt = $connexion->prepare($query);
-    $stmt->bindParam(":libelle", $libelle);
+    $stmt->bindParam(":nom", $nom);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":photo", $photo);
     $stmt->execute();
     
     return $connexion->lastInsertId();

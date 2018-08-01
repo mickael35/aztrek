@@ -21,27 +21,18 @@ function getAllSejours(int $limit = 999): array {
     return $stmt->fetchAll();
 }
 
-function getSejour(int $id): array {
+function getAllSejoursByPays(int $id): array {
     global $connexion;
-
-    $query = "SELECT 
-        sejour.*,
-        DATE_FORMAT(trek.date_creation, '%d/%m/%Y') AS date_creation_format,
-        IF(DATEDIFF(NOW(), trek.date_creation) < 30, 1, 0) AS nouveau,
-        pays.libelle AS pays,
-        MIN(depart.montant) AS montant
+    $query = "SELECT
+                sejour.*,
+                pays.nom as pays
             FROM sejour
-            INNER JOIN pays ON pays.id = sejour.pays_id
-            LEFT JOIN depart ON depart.sejour_id = sejour.id
-            WHERE depart.date_depart > NOW() OR depart.date_depart IS NULL
-            GROUP BY sejour.id
-            ORDER BY sejour.date_creation DESC;";
-
+            INNER JOIN pays ON pays.id = sejour.pays_id          
+            WHERE pays.id = :id;";
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
-
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function insertSejour(string $titre, string $duree, string $difficulte, string $description_longue, string $description, string $image, int $pays_id): int {
@@ -63,11 +54,11 @@ function insertSejour(string $titre, string $duree, string $difficulte, string $
     return $connexion->lastInsertId();
 }
 
-function updateSejour(int $id, string $titre, string $duree, string $difficulte, string $description_longue, float $description, string $image, int $pays_id): int {
+function updateSejour(int $id, string $titre, string $duree, string $difficulte, string $description, string $description_longue, string $image, int $pays_id): int {
     /* @var $connexion PDO */
     global $connexion;
     
-    $query = "UPDATE projet
+    $query = "UPDATE sejour
                 SET titre = :titre,
                     duree = :duree,
                     difficulte = :difficulte,

@@ -1,4 +1,4 @@
-<?php
+s<?php
 require_once '../../security.php';
 require_once '../../../model/database.php';
 

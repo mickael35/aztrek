@@ -5,27 +5,27 @@ require_once '../../../model/database.php';
 
 // Récupération des données du formulaire
 $id = $_POST["id"];
-$Titre = $_POST["Titre"];
-$nb_de_jour = $_POST["nb_de_jour"];
+$duree = $_POST["duree"];
 $difficulte = $_POST["difficulte"];
 $titre = $_POST["titre"];
 $description = $_POST["description"];
 $description_longue = $_POST["description_longue"];
-$photo = $_POST["photo"];
+$pays_id = $_POST["pays_id"];
+
 
 // Upload de l'image
 if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
     $sejour = getOneEntity("sejour", $id);
     $photo = $sejour["image"];
 } else {
-    $photo = $_FILES["photo"]["name"];
-    $tmp = $_FILES["photo"]["tmp_name"];
+    $photo = $_FILES["image"]["name"];
+    $tmp = $_FILES["image"]["tmp_name"];
 
     move_uploaded_file($tmp, "../../../uploads/" . $photo);
 }
 
 // Enregistrement en base de données
-updateSejour($id, $nb_de_jour, $titre, $description, $description_longue, $photo);
+updateSejour($id, $titre, $duree, $difficulte, $description, $description_longue, $photo, $pays_id);
 
 // Redirection vers la liste
 header("Location: index.php");

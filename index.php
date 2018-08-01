@@ -28,7 +28,7 @@ get_header("Accueil");
 
         <?php foreach ($list_pays as $pays) : ?>
             <section class="sejour">
-                <a href="#" class="sejour-home-visuel">
+                <a href="pays.php?id=<?php echo $pays["id"]; ?>" class="sejour-home-visuel">
                     <img src="uploads/<?php echo $pays["photo"]; ?>" alt="">
                 </a>
                 <div class="sejour-home-pres">

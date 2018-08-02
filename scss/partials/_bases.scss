@@ -23,6 +23,13 @@ body {
     
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
 h1,
 h2,
 h3 {

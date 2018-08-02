@@ -28,7 +28,7 @@ get_header("Accueil");
 
         <?php foreach ($list_pays as $pays) : ?>
             <section class="sejour">
-                <a href="pays.php?id=<?php echo $pays["id"]; ?>" class="sejour-home-visuel">
+                <a href="#" class="sejour-home-visuel">
                     <img src="uploads/<?php echo $pays["photo"]; ?>" alt="">
                 </a>
                 <div class="sejour-home-pres">
@@ -37,7 +37,7 @@ get_header("Accueil");
                         <p><?php echo $pays["description"]; ?></p>
                     </article>
                     <nav class="sejour-home-ctc">
-                        <a href="#" class="detail-sejour">Voir Plus</a>
+                        <a href="pays.php?id=<?php echo $pays["id"]; ?>" class="detail-sejour">Voir Plus</a>
                     </nav>
                 </div>
             </section>

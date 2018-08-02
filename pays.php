@@ -14,11 +14,12 @@ $list_sejours = getAllSejoursByPays($id);
 get_header($pays["nom"]);
 ?>
 <section class= "container">
-    <h1><?php echo $pays["nom"]; ?></h1>
-  
+    <h2><?php echo $pays["nom"]; ?></h2>
+
+    <section class="grid">
         <?php foreach ($list_sejours as $sejour) : ?>
             <article>
-                <img src="<?php echo get_avatar($sejour["photo"]); ?>" alt="">
+                <img src="uploads/<?php echo $sejour["image"]; ?>" alt="">
                 <div>
                     <a href="sejour.php?id=<?php echo $sejour["id"]; ?>">
                         <h2><?php echo $sejour["titre"]; ?></h2>
@@ -31,6 +32,7 @@ get_header($pays["nom"]);
                 </div>
             </article>
         <?php endforeach; ?>
-  
+    </section>
+
 </section>
 <?php get_footer(); ?>

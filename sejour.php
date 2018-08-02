@@ -7,16 +7,16 @@ if (!isset($_GET["id"])) {
 }
 
 $id = $_GET["id"];
-$pays = getOneEntity("sejour", $id);
+$sejour = getOneEntity("sejour", $id);
 
-$depart = getAlldepart($id);
+$list_departs = getAllDepartsBySejour($id);
 
-get_header($pays["nom"]);
+get_header($sejour["titre"]);
 ?>
 <section class= "container">
-    <h1><?php echo $pays["nom"]; ?></h1>
+    <h1><?php echo $sejour["titre"]; ?></h1>
   
-        <?php foreach ($list_sejours as $sejour) : ?>
+        <?php foreach ($list_departs as $depart) : ?>
             <article>
                 <img src="<?php echo get_avatar($sejour["photo"]); ?>" alt="">
                 <div>
@@ -25,9 +25,9 @@ get_header($pays["nom"]);
                     </a>
                     <em><?php echo $sejour["duree"]; ?> jours</em>                
                     <br>
-                    <em><?php echo $sejour["niveau"]; ?> jours</em>                
+                    <em><?php echo $sejour["niveau"]; ?> niveau</em>                
                     <br>
-                    <em><?php echo $sejour["description"]; ?></em>
+                    <em><?php echo $sejour["description_longue"]; ?></em>
                 </div>
             </article>
         <?php endforeach; ?>

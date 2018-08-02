@@ -26,7 +26,7 @@ get_header($pays["nom"]);
                     </a>
                     <em><?php echo $sejour["duree"]; ?> jours</em>                
                     <br>
-                    <em><?php echo $sejour["niveau"]; ?> jours</em>                
+                    <em><?php echo $sejour["difficulte"]; ?> difficulté</em>                
                     <br>
                     <em><?php echo $sejour["description"]; ?></em>
                 </div>

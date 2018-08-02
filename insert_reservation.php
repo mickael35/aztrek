@@ -4,10 +4,11 @@ require_once 'model/database.php';
 
 $utilisateur = current_user();
 
-$montant = $_POST["montant"];
-$projet_id = $_POST["projet_id"];
+$nb_personne = $_POST["nb_personne"];
+$depart_id = $_POST["depart_id"];
+$sejour_id = $_POST["sejour_id"];
 $utilisateur_id = $utilisateur["id"];
 
-insertParticipation($montant, $projet_id, $utilisateur_id);
+insertReservation($nb_personne, $depart_id, $utilisateur_id);
 
-
+header("Location: sejour.php?id=" . $sejour_id);
